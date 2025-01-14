@@ -1,0 +1,103 @@
+/* styles.css */
+body {
+    font-family: 'Roboto';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.question p {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.question input[type="radio"] {
+    margin-right: 5px;
+}
+
+.question label {
+    margin-right: 10px;
+}
+
+.correct {
+    background-color: lightgreen;
+}
+
+.incorrect {
+    border: 2px solid red;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #742079;
+    color: #ffffffc5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#score-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#score {
+    font-size: 18px;
+    color: #333;
+}
+
+#quiz-form{
+    border-radius: 30px;
+    background-color: #0056b3;
+
+}
+
+
+/* Animation de chargement */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 50px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

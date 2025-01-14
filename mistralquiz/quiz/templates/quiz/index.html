@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}">
+    <script defer src="{% static 'quiz/scripts.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste tes connaissances</h1>
+        <form id="link-form">
+            <input type="text" id="link" placeholder="Entrez le lien" required>
+            <button type="submit">Soumettre</button>
+        </form>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="quiz-container" style="display: none;">
+            <h2>Questionnaire</h2>
+            <form id="quiz-form">
+                <!-- Les questions seront insérées ici -->
+            </form>
+            <button id="submit-quiz-btn" type="button">Soumettre le questionnaire</button>
+        </div>
+        <div id="score-container" style="display: none;">
+            <h2>Votre score</h2>
+            <p id="score"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
