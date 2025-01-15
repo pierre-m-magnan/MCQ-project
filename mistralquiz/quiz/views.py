@@ -11,7 +11,6 @@ import json
 import os
 from mistralai import Mistral
 from bs4 import BeautifulSoup
-from pprint import pprint
 
 
 api_key = os.environ["MISTRAL_API_KEY"]
