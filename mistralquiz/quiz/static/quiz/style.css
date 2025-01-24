@@ -2,19 +2,24 @@
 body {
     font-family: 'Roboto';
     background-color: #f4f4f4;
-    margin: 0;
+    margin: 20;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    display:flex;
+    flex-direction: column
 }
-
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
 h1, h2 {
     text-align: center;
     color: #333;
@@ -27,8 +32,8 @@ form {
 .question {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border: 3px solid #0056b3;
     border-radius: 15px;
 }
 
@@ -45,59 +50,48 @@ form {
     margin-right: 10px;
 }
 
-.correct {
-    background-color: lightgreen;
-}
 
-.incorrect {
-    border: 2px solid red;
+.no-bullets {
+    list-style-type: none;
 }
 
 button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #742079;
-    color: #ffffffc5;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 button:hover {
     background-color: #0056b3;
+    color: #ffffff
 }
 
-#score-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#score {
-    font-size: 18px;
-    color: #333;
-}
-
-#quiz-form{
+.quiz-form{
     border-radius: 30px;
     background-color: #0056b3;
 
 }
 
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
 
-/* Animation de chargement */
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-    margin: 50px auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#quiz-list {
+display:flex;
+flex-direction:column;
 }

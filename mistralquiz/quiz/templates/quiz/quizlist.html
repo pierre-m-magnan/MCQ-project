@@ -1,0 +1,28 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+
+<div id="quiz-list" class="container">
+{% for title, section in structure.items %}
+<h3> {{title}} </h3>
+    {% for subtitle, bornes in section.items%}
+    <details>
+        <summary>{{subtitle}}</summary>
+        <ul>
+            {% with inf=bornes.0|stringformat:"s" sup=bornes.1|stringformat:"s" %}
+                {% with  articleSlice=inf|add:":"|add:sup %}
+                    {% for quiz in quizzes|slice:articleSlice %}
+                    <li class="flex-container">
+                        <a href = "{% url 'quiz-detail' quiz.id %}">{{ quiz.title }}</a>
+                        <a href = {{ quiz.url }}> Lien du cours</a>
+                    </li>
+                    {% endfor %}
+                {% endwith %}
+            {% endwith %}
+        </ul>
+        </details>
+
+    {% endfor %}
+{% endfor %}
+
+</div>
+{% endblock %}

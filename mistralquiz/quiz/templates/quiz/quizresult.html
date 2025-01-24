@@ -1,0 +1,8 @@
+{% extends 'quiz/base.html' %}
+{% block result %}
+<div class="container">
+<h1>Résultats</h1>
+<p>Ton score: {{ score }} sur 10</p>
+<a href="{% url 'quiz-list'%}">Retour aux questionnaires </a>
+</div>
+{% endblock %}

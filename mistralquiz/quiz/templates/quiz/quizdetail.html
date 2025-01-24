@@ -1,0 +1,27 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+
+<h1>{{ quiz.title }}</h1>
+<form class="quiz-form" action="{% url 'submit_quiz' quiz.id %}" method="post">
+    {% csrf_token %}
+    {% for question, answers in qadict.items %}
+    <div class="question">
+        <p>{{question.text}}</p>
+        <ul class="answers no-bullets">
+        {% for answer in answers %}
+        <li >
+            <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}" id="answer_{{ answer.id }}">
+            <label for="answer_{{ answer.id }}">{{ answer.text }}</label>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+    
+    {% endfor %}
+    <button type="submit">ENVOYER CES RÉPONSES</button>
+
+</form>
+
+{% block result %}{% endblock %}
+
+{% endblock %}

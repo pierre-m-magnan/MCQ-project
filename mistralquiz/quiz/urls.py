@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('submit-link/', views.submit_link, name='submit_link'), # type: ignore
-    path('submit-quiz/', views.submit_quiz, name='submit_quiz'), # type: ignore
+    path('quizzes/', views.quizlist, name="quiz-list"),
+    path('quiz/<int:quiz_id>', views.quizdetail, name='quiz-detail'),
+    path('quiz/<int:quiz_id>/submit/', views.submit_quiz, name='submit_quiz'), # type: ignore
 ]
+
